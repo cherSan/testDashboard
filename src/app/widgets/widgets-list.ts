@@ -9,7 +9,6 @@ export module widgets {
     Widget1: {
       module: Widget1Module,
       component: Widget1Component,
-      // injector: [TestService]
     },
     Widget2: {
       module: Widget2Module,

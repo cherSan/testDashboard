@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TestService} from "./_services/test.service";
 import {Widget1Module} from "./widget1.module";
-import {StorageService} from "../widget-storage/storage.service";
 
 @Component({
   selector: 'app-widget1',
@@ -10,17 +9,23 @@ import {StorageService} from "../widget-storage/storage.service";
 })
 export class Widget1Component implements OnInit {
 
+  private _id;
+
   add = () => {
     this._service.add();
   };
 
-  count: number = 123;
+  count: number = 0;
 
   constructor(
-    private _service: TestService,
-    private _storage: StorageService
+    private _service: TestService
   ) {
-    _service.count.subscribe(val => this.count = val);
+    this._id = Widget1Module.current;
+
+    _service.count.subscribe(val => {
+      this.count = val;
+      Widget1Module.setParams(this._id, {count: val});
+    });
   }
 
   ngOnInit() {

@@ -36,10 +36,13 @@ export class DashboardComponent implements OnInit {
     this.updateData(this._service.widgets.getValue());
   };
 
+  myInjector;
+
   constructor(
     private _service: WidgetsService,
-    private _dragula: DragulaService
+    private _dragula: DragulaService,
   ) {
+
     this._service.widgets.subscribe((val) => {
       this.updateData(val);
     });
@@ -52,9 +55,9 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  dragstart = (a) => {
-    console.log(a);
-  }
+  dragstart = (widget) => {
+    widget.baseModule.current = widget.id;
+  };
 
   updateData = (val) => {
     this._addWidget = false;

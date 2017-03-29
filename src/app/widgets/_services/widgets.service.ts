@@ -7,6 +7,7 @@ export class Widget {
     public id: number,
     public component,
     public module,
+    public baseModule
   ) {
   }
 }
@@ -15,7 +16,6 @@ export interface WidgetList { [key: number]: Array<Widget>; }
 @Injectable()
 export class WidgetsService {
 
-  private _id: number = 0;
   widgetList = widgets.List;
 
   public widgets: BehaviorSubject<WidgetList> = new BehaviorSubject({});
@@ -29,14 +29,14 @@ export class WidgetsService {
     }
 
     let widget = new Widget(
-        this._id,
+        this.widgetList[name].module.next(),
         this.widgetList[name].component,
         this._compiler.compileModuleSync(this.widgetList[name].module),
+        this.widgetList[name].module
     );
 
     widgets[column].push(widget);
     this.widgets.next(widgets);
-    this._id++;
   };
 
   constructor(
