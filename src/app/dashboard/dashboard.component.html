@@ -1,0 +1,31 @@
+<div *ngIf="_addWidget">
+  <app-widget-list [column]="_column"></app-widget-list>
+</div>
+
+<button (click)="setColumns(2)">1|1</button>
+<button (click)="setColumns(3)">1|1|1</button>
+
+<hr>
+<div class="dashboard">
+  <ng-container *ngTemplateOutlet="layout"></ng-container>
+</div>
+<hr>
+{{layouts | json}}
+
+<ng-template #layout>
+  <div class="column" *ngFor="let layout of layouts; let i = index">
+    <div (click)="addWidget(i)">
+      Add widget
+    </div>
+    <div class='container' [dragula]='"tpl2"' [dragulaModel]='layout.items'>
+      <div *ngFor="let widget of layout.items">
+        <div (mousedown)="dragstart(widget)">
+          <ng-container
+            [ngComponentOutlet]="widget.component"
+            [ngComponentOutletNgModuleFactory]="widget.module"
+          ></ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

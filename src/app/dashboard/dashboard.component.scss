@@ -1,0 +1,15 @@
+:host {
+  .dashboard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    >div {
+      flex: 1;
+      border: 1px solid black;
+
+      .container {
+        min-height: 50px;
+      }
+    }
+  }
+}
