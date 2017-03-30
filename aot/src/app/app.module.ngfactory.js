@@ -362,11 +362,17 @@ var AppModuleInjector = (function (_super) {
         this._Location_12 = new import3.Location(this._LocationStrategy_11);
         this._Compiler_13 = new import0.Compiler();
         this._NgModuleFactoryLoader_14 = new import0.SystemJsNgModuleLoader(this._Compiler_13, this.parent.get(import0.SystemJsNgModuleLoaderConfig, null));
-        this._ROUTES_15 = [[{
+        this._ROUTES_15 = [[
+                {
                     path: '',
                     loadChildren: '../dashboard/dashboard.module#DashboardModule'
+                },
+                {
+                    path: 'test',
+                    loadChildren: '../test/test.module#TestModule'
                 }
-            ]];
+            ]
+        ];
         this._Router_16 = import2.ɵe(this._ApplicationRef_7, this._UrlSerializer_8, this._RouterOutletMap_9, this._Location_12, this, this._NgModuleFactoryLoader_14, this._Compiler_13, this._ROUTES_15, this._ROUTER_CONFIGURATION_10, this.parent.get(import2.UrlHandlingStrategy, null), this.parent.get(import2.RouteReuseStrategy, null));
         this._RouterModule_17 = new import2.RouterModule(this._ɵa_0, this._Router_16);
         this._RouteApplicationModule_18 = new import4.RouteApplicationModule();

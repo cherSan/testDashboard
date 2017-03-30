@@ -83,11 +83,19 @@ class RouteApplicationModuleInjector extends import0.ɵNgModuleInjector<import1.
     this._LocationStrategy_4 = import2.ɵc(this.parent.get(import3.PlatformLocation),this.parent.get(import3.APP_BASE_HREF,(null as any)),this._ROUTER_CONFIGURATION_3);
     this._Location_5 = new import3.Location(this._LocationStrategy_4);
     this._NgModuleFactoryLoader_6 = new import0.SystemJsNgModuleLoader(this.parent.get(import0.Compiler),this.parent.get(import0.SystemJsNgModuleLoaderConfig,(null as any)));
-        this._ROUTES_7 = [[{
+      this._ROUTES_7 = [[
+        {
           path: '',
           loadChildren: '../dashboard/dashboard.module#DashboardModule'
         }
-    ]];
+        ,
+        {
+          path: 'test',
+          loadChildren: '../test/test.module#TestModule'
+        }
+
+      ]
+    ];
     this._Router_8 = import2.ɵe(this.parent.get(import0.ApplicationRef),this._UrlSerializer_1,this._RouterOutletMap_2,this._Location_5,this,this._NgModuleFactoryLoader_6,this.parent.get(import0.Compiler),this._ROUTES_7,this._ROUTER_CONFIGURATION_3,this.parent.get(import2.UrlHandlingStrategy,(null as any)),this.parent.get(import2.RouteReuseStrategy,(null as any)));
     this._RouterModule_9 = new import2.RouterModule(this._ɵa_0,this._Router_8);
     this._RouteApplicationModule_10 = new import1.RouteApplicationModule();
@@ -122,4 +130,4 @@ class RouteApplicationModuleInjector extends import0.ɵNgModuleInjector<import1.
   }
 }
 export const RouteApplicationModuleNgFactory:import0.NgModuleFactory<import1.RouteApplicationModule> = new import0.NgModuleFactory<any>(RouteApplicationModuleInjector,import1.RouteApplicationModule);
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvYWNoZXJudXNoZXZpY2gvUHJvamVjdHMvUGVyc29uYWwvQW5ndWxhcjJ2MS9zcmMvYXBwL3JvdXRlLWFwcGxpY2F0aW9uL3JvdXRlLWFwcGxpY2F0aW9uLm1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9ob21lL2FjaGVybnVzaGV2aWNoL1Byb2plY3RzL1BlcnNvbmFsL0FuZ3VsYXIydjEvc3JjL2FwcC9yb3V0ZS1hcHBsaWNhdGlvbi9yb3V0ZS1hcHBsaWNhdGlvbi5tb2R1bGUudHMiXSwic291cmNlc0NvbnRlbnQiOlsiICJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzsifQ==
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvYWNoZXJudXNoZXZpY2gvUHJvamVjdHMvUGVyc29uYWwvQW5ndWxhcjJ2MS9zcmMvYXBwL3JvdXRlLWFwcGxpY2F0aW9uL3JvdXRlLWFwcGxpY2F0aW9uLm1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9ob21lL2FjaGVybnVzaGV2aWNoL1Byb2plY3RzL1BlcnNvbmFsL0FuZ3VsYXIydjEvc3JjL2FwcC9yb3V0ZS1hcHBsaWNhdGlvbi9yb3V0ZS1hcHBsaWNhdGlvbi5tb2R1bGUudHMiXSwic291cmNlc0NvbnRlbnQiOlsiICJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9

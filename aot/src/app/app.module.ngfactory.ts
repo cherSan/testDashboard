@@ -226,11 +226,19 @@ class AppModuleInjector extends import0.ɵNgModuleInjector<import1.AppModule> {
     this._Location_12 = new import3.Location(this._LocationStrategy_11);
     this._Compiler_13 = new import0.Compiler();
     this._NgModuleFactoryLoader_14 = new import0.SystemJsNgModuleLoader(this._Compiler_13,this.parent.get(import0.SystemJsNgModuleLoaderConfig,(null as any)));
-        this._ROUTES_15 = [[{
+      this._ROUTES_15 = [[
+        {
           path: '',
           loadChildren: '../dashboard/dashboard.module#DashboardModule'
         }
-    ]];
+        ,
+        {
+          path: 'test',
+          loadChildren: '../test/test.module#TestModule'
+        }
+
+      ]
+    ];
     this._Router_16 = import2.ɵe(this._ApplicationRef_7,this._UrlSerializer_8,this._RouterOutletMap_9,this._Location_12,this,this._NgModuleFactoryLoader_14,this._Compiler_13,this._ROUTES_15,this._ROUTER_CONFIGURATION_10,this.parent.get(import2.UrlHandlingStrategy,(null as any)),this.parent.get(import2.RouteReuseStrategy,(null as any)));
     this._RouterModule_17 = new import2.RouterModule(this._ɵa_0,this._Router_16);
     this._RouteApplicationModule_18 = new import4.RouteApplicationModule();
@@ -310,4 +318,4 @@ class AppModuleInjector extends import0.ɵNgModuleInjector<import1.AppModule> {
   }
 }
 export const AppModuleNgFactory:import0.NgModuleFactory<import1.AppModule> = new import0.NgModuleFactory<any>(AppModuleInjector,import1.AppModule);
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvYWNoZXJudXNoZXZpY2gvUHJvamVjdHMvUGVyc29uYWwvQW5ndWxhcjJ2MS9zcmMvYXBwL2FwcC5tb2R1bGUubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vaG9tZS9hY2hlcm51c2hldmljaC9Qcm9qZWN0cy9QZXJzb25hbC9Bbmd1bGFyMnYxL3NyYy9hcHAvYXBwLm1vZHVsZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvYWNoZXJudXNoZXZpY2gvUHJvamVjdHMvUGVyc29uYWwvQW5ndWxhcjJ2MS9zcmMvYXBwL2FwcC5tb2R1bGUubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vaG9tZS9hY2hlcm51c2hldmljaC9Qcm9qZWN0cy9QZXJzb25hbC9Bbmd1bGFyMnYxL3NyYy9hcHAvYXBwLm1vZHVsZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzsifQ==

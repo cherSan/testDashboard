@@ -29,7 +29,7 @@ export class Widget1API {
   styleUrls: ['./widget1.component.scss']
 })
 export class Widget1Component implements OnDestroy {
-  private count: number = 0;
+  public count: number = 0;
   constructor(
     private _config: Widget1Config, //Init only one time for each new widget (widgets.List.injector) (this widget)
     private _service: TestService, //Init & destroy each time when widget create and destroy (in module) (this widget)

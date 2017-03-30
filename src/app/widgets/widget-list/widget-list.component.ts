@@ -9,7 +9,7 @@ import {WidgetsService} from "../_services/widgets.service";
 })
 export class WidgetListComponent implements OnInit {
 
-  private widgetList = widgets.Names;
+  public widgetList = widgets.Names;
   @Input('column')
   column: number = 0;
 

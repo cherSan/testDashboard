@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {RouteApplicationModule} from "./route-application/route-application.module";
+import {NgModule} from "@angular/core";
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import {RouteApplicationModule} from "./route-application/route-application.modu
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

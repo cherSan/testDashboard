@@ -9,7 +9,11 @@ import { RouterModule } from "@angular/router";
 var route = [
     {
         path: "",
-        loadChildren: "../dashboard/dashboard.module#DashboardModule"
+        loadChildren: "../dashboard/dashboard.module#DashboardModule",
+    },
+    {
+        path: "test",
+        loadChildren: "../test/test.module#TestModule",
     }
 ];
 var RouteApplicationModule = (function () {

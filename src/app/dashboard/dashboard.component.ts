@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
   private _teamplate: ElementRef;
 
   private _column: number = 0;
-  private _addWidget: boolean = false;
+  public _addWidget: boolean = false;
 
   private layouts: Array<Layout> = [];
 
