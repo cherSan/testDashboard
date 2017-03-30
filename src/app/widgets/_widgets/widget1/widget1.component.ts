@@ -1,5 +1,6 @@
 import {Component, Injectable, OnDestroy} from '@angular/core';
 import {TestService} from "./_services/test.service";
+import {WidgetStorageService} from "../../_services/widget-storage.service";
 
 @Injectable()
 export class Widget1Config {
@@ -30,22 +31,17 @@ export class Widget1API {
 export class Widget1Component implements OnDestroy {
   private count: number = 0;
   constructor(
-    private _config: Widget1Config,
-    private _service: TestService,
-    private _api: Widget1API
+    private _config: Widget1Config, //Init only one time for each new widget (widgets.List.injector) (this widget)
+    private _service: TestService, //Init & destroy each time when widget create and destroy (in module) (this widget)
+    private _api: Widget1API, //Init only one time when this type of widget create (widgets.List.oneTimeInjector) (this type of widget)
+    private _storage: WidgetStorageService //Access to personal provider from any widgets, Init only one time for each new widget (any type of widget)
   ) {
-    setTimeout(() => {
-      this.count = _config.restore();
-
-      console.log(this.count);
-
-      _service.setCount(this.count);
-
-      _service.count.subscribe(val => {
-        this.count = val;
-      })
-    }, 0)
-
+    this.count = _storage.getByKey('count');
+    _service.setCount(this.count);
+    _service.count.subscribe(val => {
+      this.count = val;
+      this._storage.set('count', this.count);
+    })
   }
 
   add = () => {
@@ -54,6 +50,5 @@ export class Widget1Component implements OnDestroy {
 
   ngOnDestroy() {
     console.log('destroy', this.count);
-    this._config.save(this.count);
   }
 }

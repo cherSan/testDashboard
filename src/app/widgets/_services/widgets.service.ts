@@ -1,6 +1,7 @@
 import {Compiler, Injectable, Injector, NgModuleFactory, ReflectiveInjector} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {widgets} from "../widgets-list";
+import {WidgetStorageService} from "./widget-storage.service";
 
 export class Widget {
   constructor(
@@ -38,7 +39,7 @@ export class WidgetsService {
     let widget = new Widget(
         this.widgetList[name].component,
         this._compiler.compileModuleSync(this.widgetList[name].module),
-        ReflectiveInjector.resolveAndCreate(this.widgetList[name].injector, injector)
+        ReflectiveInjector.resolveAndCreate([ WidgetStorageService, ...this.widgetList[name].injector ], injector)
     );
 
     widgets[column].push(widget);

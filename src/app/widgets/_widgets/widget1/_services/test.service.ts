@@ -20,7 +20,7 @@ export class TestService {
   };
 
   setCount = (count: number) => {
-    this.count.next(count);
+    this.count.next(count || 0);
   };
 
   constructor() {

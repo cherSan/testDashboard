@@ -2,6 +2,7 @@ import {Component, ElementRef, Injectable, Injector, OnInit, ReflectiveInjector,
 import {WidgetsService, Widget} from "../widgets/_services/widgets.service";
 import {DragulaService} from "ng2-dragula";
 import {widgets} from "../widgets/widgets-list";
+import {Widget1Config} from "../widgets/_widgets/widget1/widget1.component";
 
 interface Layout {
   items: Array<Widget>
@@ -65,10 +66,14 @@ export class DashboardComponent implements OnInit {
     for( let index in val ) {
       if( this.layouts[index] ) {
         this.layouts[index].items = val[index];
+
+        let b = val[index][0].injector.get(Widget1Config);
+
+        console.log(b);
+
       } else {
         this.layouts[this.layouts.length - 1].items = this.layouts[this.layouts.length - 1].items.concat(val[index]);
       }
-      console.log(this.layouts);
     }
   };
 
