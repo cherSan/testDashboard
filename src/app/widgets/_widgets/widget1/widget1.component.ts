@@ -4,7 +4,7 @@ import {TestService} from "./_services/test.service";
 @Injectable()
 export class Widget1Config {
   constructor() {
-    console.log('Widget1Config');
+    console.log('Widget1Config init one time per Widget creation');
   }
   private count: number = 0;
   save = (value: number) => {
@@ -32,6 +32,7 @@ export class Widget1Component implements OnDestroy {
   constructor(
     private _config: Widget1Config,
     private _service: TestService,
+    private _api: Widget1API
   ) {
     setTimeout(() => {
       this.count = _config.restore();

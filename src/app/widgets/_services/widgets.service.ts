@@ -32,11 +32,13 @@ export class WidgetsService {
     if( this.widgetList[name].oneTimeInjector && !this.globalInjectors[name] ) {
       this.globalInjectors[name] = ReflectiveInjector.resolveAndCreate(this.widgetList[name].oneTimeInjector, this._injector)
     }
+
+    let injector = this.globalInjectors[name] || this._injector;
+
     let widget = new Widget(
         this.widgetList[name].component,
         this._compiler.compileModuleSync(this.widgetList[name].module),
-        // this.widgetList[name].injector
-        ReflectiveInjector.resolveAndCreate(this.widgetList[name].injector, this._injector)
+        ReflectiveInjector.resolveAndCreate(this.widgetList[name].injector, injector)
     );
 
     widgets[column].push(widget);

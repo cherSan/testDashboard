@@ -21,9 +21,10 @@ export class TestService {
 
   setCount = (count: number) => {
     this.count.next(count);
-  }
+  };
 
   constructor() {
+    console.log("TestService init each time when component creation")
   }
 
   ngOnDestroy() {
