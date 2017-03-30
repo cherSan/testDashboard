@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {Widget1Component} from "./widget1.component";
-import {TestService} from "./_services/test.service";
+import {Test001Service} from "./test001.service";
+import {CompleteComponent} from "../complete.component";
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    Widget1Component
+    CompleteComponent
   ],
   entryComponents: [
-    Widget1Component,
+    CompleteComponent
   ],
   providers: [
-    TestService
+    Test001Service
   ]
 })
-export class Widget1Module {
-
-}
+export class BlaModule { }

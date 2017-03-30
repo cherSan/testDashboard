@@ -5,8 +5,6 @@ import {Widget1Module} from "../widget1.module";
 @Injectable()
 export class TestService {
 
-  private _id;
-
   public count: BehaviorSubject<number> = new BehaviorSubject(0);
 
   add = () => {
@@ -21,17 +19,14 @@ export class TestService {
     this.count.next(val);
   };
 
-  constructor() {
-    this._id = Widget1Module.current;
-
-    let params = Widget1Module.getParams(this._id),
-        count = params.count || 0;
-
+  setCount = (count: number) => {
     this.count.next(count);
   }
 
+  constructor() {
+  }
+
   ngOnDestroy() {
-    // Widget1Module.setParams(this._id, {count: this.count.getValue()});
   }
 
 }

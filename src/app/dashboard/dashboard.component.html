@@ -10,8 +10,6 @@
   <ng-container *ngTemplateOutlet="layout"></ng-container>
 </div>
 <hr>
-{{layouts | json}}
-
 <ng-template #layout>
   <div class="column" *ngFor="let layout of layouts; let i = index">
     <div (click)="addWidget(i)">
@@ -19,12 +17,10 @@
     </div>
     <div class='container' [dragula]='"tpl2"' [dragulaModel]='layout.items'>
       <div *ngFor="let widget of layout.items">
-        <div (mousedown)="dragstart(widget)">
-          <ng-container
-            [ngComponentOutlet]="widget.component"
-            [ngComponentOutletNgModuleFactory]="widget.module"
-          ></ng-container>
-        </div>
+        <ng-container [ngComponentOutlet]="widget.component"
+                      [ngComponentOutletNgModuleFactory]="widget.module"
+                      [ngComponentOutletInjector]="widget.injector"
+        ></ng-container>
       </div>
     </div>
   </div>

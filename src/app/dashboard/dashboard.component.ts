@@ -1,9 +1,15 @@
 import {Component, ElementRef, Injectable, Injector, OnInit, ReflectiveInjector, ViewChild} from '@angular/core';
 import {WidgetsService, Widget} from "../widgets/_services/widgets.service";
 import {DragulaService} from "ng2-dragula";
+import {widgets} from "../widgets/widgets-list";
 
 interface Layout {
   items: Array<Widget>
+}
+
+@Injectable()
+export class Test001 {
+  suffix = 3;
 }
 
 @Component({
@@ -36,8 +42,6 @@ export class DashboardComponent implements OnInit {
     this.updateData(this._service.widgets.getValue());
   };
 
-  myInjector;
-
   constructor(
     private _service: WidgetsService,
     private _dragula: DragulaService,
@@ -46,20 +50,17 @@ export class DashboardComponent implements OnInit {
     this._service.widgets.subscribe((val) => {
       this.updateData(val);
     });
-    _dragula.setOptions('tpl2', {
-      removeOnSpill: true
-    });
 
-    _dragula.removeModel.subscribe((val, a) => {
-      console.log('removeModel', val, a);
-    })
+    // _dragula.setOptions('tpl2', {
+    //   removeOnSpill: true
+    // });
+
+    // _dragula.removeModel.subscribe((val, a) => {
+    //   console.log('removeModel', val, a);
+    // });
   }
 
-  dragstart = (widget) => {
-    widget.baseModule.current = widget.id;
-  };
-
-  updateData = (val) => {
+  private updateData = (val) => {
     this._addWidget = false;
     for( let index in val ) {
       if( this.layouts[index] ) {
@@ -67,12 +68,9 @@ export class DashboardComponent implements OnInit {
       } else {
         this.layouts[this.layouts.length - 1].items = this.layouts[this.layouts.length - 1].items.concat(val[index]);
       }
+      console.log(this.layouts);
     }
   };
-
-  onDropModel = (args) => {
-    console.log(args);
-  }
 
   ngOnInit() {
   }

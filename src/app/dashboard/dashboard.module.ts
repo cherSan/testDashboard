@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard.component';
 import {RouterModule, Routes} from "@angular/router";
 import {WidgetsModule} from "../widgets/widgets.module";
 import {DragulaModule} from "ng2-dragula";
+import {Widget1Component} from "../widgets/_widgets/widget1/widget1.component";
 
 const route: Routes = [
   {
@@ -20,7 +21,7 @@ const route: Routes = [
     DragulaModule
   ],
   declarations: [
-    DashboardComponent,
+    DashboardComponent
   ]
 })
 export class DashboardModule { }
